@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Frontend Example</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Flask!</h1>
+        <p>This is a simple Flask frontend example.</p>
+        <button id="click-me">Click Me</button>
+    </div>
+
+    <script>
+        document.getElementById('click-me').addEventListener('click', () => {
+            alert('Button clicked!');
+        });
+    </script>
+</body>
+</html>

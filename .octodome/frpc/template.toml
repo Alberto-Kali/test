@@ -1,0 +1,11 @@
+serverAddr = "77.83.85.32"
+serverPort = 6000
+auth.method = "token"
+auth.token = "$TOKEN"
+
+[[proxies]]
+name = "$NAME"
+type = "http"
+localIP = "nginx"
+localPort = 80
+customDomains = ["$URL"]

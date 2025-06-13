@@ -1,0 +1,42 @@
+version: '3.9'
+
+services:
+
+  frp:
+    build: ./.octodome/frpc
+    env_file:
+      - .env
+    depends_on:
+      - nginx
+    networks:
+      - main_network
+
+  nginx:
+    build: ./.octodome/nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - frontend
+      - backend
+    networks:
+      - main_network
+
+  frontend:
+    build: ./frontend
+    depends_on:
+      - backend
+    networks:
+      - main_network
+
+  backend:
+    build: ./backend
+    depends_on:
+    
+    networks:
+      - main_network
+
+#....Other containers
+
+networks:
+  main_network:
+    driver: bridge
